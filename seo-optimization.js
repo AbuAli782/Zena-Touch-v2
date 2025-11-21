@@ -95,18 +95,18 @@ class SEOOptimizer {
      */
     getBreadcrumbs(page) {
         const breadcrumbs = [
-            { name: 'الرئيسية', url: 'https://zenatoch.com/' }
+            { name: 'الرئيسية', url: 'https://abuali782.github.io/Zena-Touch-v2/' }
         ];
 
         switch(page) {
             case 'portfolio.html':
-                breadcrumbs.push({ name: 'معرض الأعمال', url: 'https://zenatoch.com/portfolio.html' });
+                breadcrumbs.push({ name: 'معرض الأعمال', url: 'https://abuali782.github.io/Zena-Touch-v2/portfolio.html' });
                 break;
             case 'contact.html':
-                breadcrumbs.push({ name: 'اتصل بنا', url: 'https://zenatoch.com/contact.html' });
+                breadcrumbs.push({ name: 'اتصل بنا', url: 'https://abuali782.github.io/Zena-Touch-v2/contact.html' });
                 break;
             case 'service-detail.html':
-                breadcrumbs.push({ name: 'الخدمات', url: 'https://zenatoch.com/service-detail.html' });
+                breadcrumbs.push({ name: 'الخدمات', url: 'https://abuali782.github.io/Zena-Touch-v2/service-detail.html' });
                 break;
         }
 

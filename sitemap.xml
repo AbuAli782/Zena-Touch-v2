@@ -5,7 +5,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://zenatoch.com/</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -13,7 +13,7 @@
 
     <!-- Portfolio Page -->
     <url>
-        <loc>https://zenatoch.com/portfolio.html</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/portfolio.html</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -21,7 +21,7 @@
 
     <!-- Contact Page -->
     <url>
-        <loc>https://zenatoch.com/contact.html</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/contact.html</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -30,7 +30,7 @@
     <!-- Service Detail Pages -->
     <!-- Decoration Service -->
     <url>
-        <loc>https://zenatoch.com/service-detail.html?service=decoration</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/service-detail.html?service=decoration</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
@@ -38,7 +38,7 @@
 
     <!-- Electricity Service -->
     <url>
-        <loc>https://zenatoch.com/service-detail.html?service=electricity</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/service-detail.html?service=electricity</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
@@ -46,7 +46,7 @@
 
     <!-- Plumbing Service -->
     <url>
-        <loc>https://zenatoch.com/service-detail.html?service=plumbing</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/service-detail.html?service=plumbing</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
@@ -54,28 +54,28 @@
 
     <!-- Portfolio Images and Videos -->
     <url>
-        <loc>https://zenatoch.com/portfolio.html?category=all</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/portfolio.html?category=all</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://zenatoch.com/portfolio.html?category=decoration</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/portfolio.html?category=decoration</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
-        <loc>https://zenatoch.com/portfolio.html?category=electricity</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/portfolio.html?category=electricity</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
-        <loc>https://zenatoch.com/portfolio.html?category=plumbing</loc>
+        <loc>https://abuali782.github.io/Zena-Touch-v2/portfolio.html?category=plumbing</loc>
         <lastmod>2025-11-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.75</priority>

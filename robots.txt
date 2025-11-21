@@ -43,5 +43,4 @@ User-agent: DotBot
 Disallow: /
 
 # Sitemap location
-Sitemap: https://zenatoch.com/sitemap.xml
-Sitemap: https://www.zenatoch.com/sitemap.xml
+Sitemap: https://abuali782.github.io/Zena-Touch-v2/sitemap.xml
