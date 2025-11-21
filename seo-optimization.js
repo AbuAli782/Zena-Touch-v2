@@ -171,11 +171,15 @@ class SEOOptimizer {
             // Cumulative Layout Shift (CLS)
             try {
                 let clsValue = 0;
+                let clsLogged = false;
                 const clsObserver = new PerformanceObserver((list) => {
                     for (const entry of list.getEntries()) {
                         if (!entry.hadRecentInput) {
                             clsValue += entry.value;
-                            console.log('CLS:', clsValue);
+                            if (!clsLogged && clsValue > 0) {
+                                console.log('CLS:', clsValue);
+                                clsLogged = true;
+                            }
                         }
                     }
                 });
@@ -184,17 +188,18 @@ class SEOOptimizer {
                 console.log('CLS monitoring not supported');
             }
 
-            // First Input Delay (FID)
+            // First Input Delay (FID) / Interaction to Next Paint (INP)
             try {
                 const fidObserver = new PerformanceObserver((list) => {
                     const entries = list.getEntries();
-                    entries.forEach((entry) => {
-                        console.log('FID:', entry.processingDuration);
-                    });
+                    if (entries.length > 0) {
+                        const entry = entries[0];
+                        console.log('FID/INP:', entry.processingDuration || 'N/A');
+                    }
                 });
-                fidObserver.observe({ entryTypes: ['first-input'] });
+                fidObserver.observe({ entryTypes: ['first-input', 'event'] });
             } catch (e) {
-                console.log('FID monitoring not supported');
+                console.log('FID/INP monitoring not supported');
             }
         }
     }

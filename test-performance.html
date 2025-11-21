@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الأداء - Zeina Touch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #3A506B 0%, #2A3D52 100%);
+            color: #fff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #C4A265;
+        }
+
+        .test-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #C4A265;
+        }
+
+        .test-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status.success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .status.warning {
+            background: #FF9800;
+            color: white;
+        }
+
+        .status.error {
+            background: #F44336;
+            color: white;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric {
+            background: rgba(196, 162, 101, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #C4A265;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #C4A265 0%, #B49255 100%);
+            color: #1C1C1C;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(196, 162, 101, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 اختبار أداء الموقع</h1>
+
+        <div class="test-section">
+            <h2>✅ فحوصات الأداء</h2>
+            <div class="test-item">
+                <span>تحميل الصفحة</span>
+                <span class="status success" id="pageLoad">جاهز</span>
+            </div>
+            <div class="test-item">
+                <span>Service Worker</span>
+                <span class="status" id="swStatus">فحص...</span>
+            </div>
+            <div class="test-item">
+                <span>Cache API</span>
+                <span class="status" id="cacheStatus">فحص...</span>
+            </div>
+            <div class="test-item">
+                <span>Google Fonts</span>
+                <span class="status" id="fontsStatus">فحص...</span>
+            </div>
+            <div class="test-item">
+                <span>Lightbox</span>
+                <span class="status" id="lightboxStatus">فحص...</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📊 مقاييس الأداء</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value" id="fcp">-</div>
+                    <div class="metric-label">First Contentful Paint</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="lcp">-</div>
+                    <div class="metric-label">Largest Contentful Paint</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="cls">-</div>
+                    <div class="metric-label">Cumulative Layout Shift</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="fid">-</div>
+                    <div class="metric-label">First Input Delay</div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="runTests()">🔄 إعادة الاختبار</button>
+
+        <div class="footer">
+            <p>تم آخر تحديث: <span id="timestamp"></span></p>
+            <p>جميع الاختبارات تعمل في الوقت الفعلي</p>
+        </div>
+    </div>
+
+    <script>
+        // Update timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('ar-SA');
+
+        // Check Service Worker
+        function checkServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                    const status = registrations.length > 0 ? 'success' : 'warning';
+                    const text = registrations.length > 0 ? 'مسجل' : 'غير مسجل';
+                    document.getElementById('swStatus').className = 'status ' + status;
+                    document.getElementById('swStatus').textContent = text;
+                });
+            } else {
+                document.getElementById('swStatus').className = 'status error';
+                document.getElementById('swStatus').textContent = 'غير مدعوم';
+            }
+        }
+
+        // Check Cache API
+        function checkCache() {
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    const status = names.length > 0 ? 'success' : 'warning';
+                    const text = names.length > 0 ? `${names.length} cache` : 'فارغ';
+                    document.getElementById('cacheStatus').className = 'status ' + status;
+                    document.getElementById('cacheStatus').textContent = text;
+                });
+            } else {
+                document.getElementById('cacheStatus').className = 'status error';
+                document.getElementById('cacheStatus').textContent = 'غير مدعوم';
+            }
+        }
+
+        // Check Google Fonts
+        function checkFonts() {
+            const fonts = document.fonts;
+            if (fonts && fonts.ready) {
+                fonts.ready.then(() => {
+                    document.getElementById('fontsStatus').className = 'status success';
+                    document.getElementById('fontsStatus').textContent = 'محمل';
+                }).catch(() => {
+                    document.getElementById('fontsStatus').className = 'status warning';
+                    document.getElementById('fontsStatus').textContent = 'fallback';
+                });
+            }
+        }
+
+        // Check Lightbox
+        function checkLightbox() {
+            if (typeof lightbox !== 'undefined') {
+                document.getElementById('lightboxStatus').className = 'status success';
+                document.getElementById('lightboxStatus').textContent = 'جاهز';
+            } else {
+                document.getElementById('lightboxStatus').className = 'status warning';
+                document.getElementById('lightboxStatus').textContent = 'قيد التحميل';
+                setTimeout(checkLightbox, 1000);
+            }
+        }
+
+        // Get Performance Metrics
+        function getMetrics() {
+            if ('PerformanceObserver' in window) {
+                // FCP
+                try {
+                    const fcpObserver = new PerformanceObserver((list) => {
+                        const entries = list.getEntries();
+                        if (entries.length > 0) {
+                            const fcp = Math.round(entries[0].startTime);
+                            document.getElementById('fcp').textContent = fcp + 'ms';
+                        }
+                    });
+                    fcpObserver.observe({ entryTypes: ['paint'] });
+                } catch (e) {}
+
+                // LCP
+                try {
+                    const lcpObserver = new PerformanceObserver((list) => {
+                        const entries = list.getEntries();
+                        if (entries.length > 0) {
+                            const lcp = Math.round(entries[entries.length - 1].renderTime || entries[entries.length - 1].loadTime);
+                            document.getElementById('lcp').textContent = lcp + 'ms';
+                        }
+                    });
+                    lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+                } catch (e) {}
+
+                // CLS
+                try {
+                    let clsValue = 0;
+                    const clsObserver = new PerformanceObserver((list) => {
+                        for (const entry of list.getEntries()) {
+                            if (!entry.hadRecentInput) {
+                                clsValue += entry.value;
+                            }
+                        }
+                        document.getElementById('cls').textContent = clsValue.toFixed(3);
+                    });
+                    clsObserver.observe({ entryTypes: ['layout-shift'] });
+                } catch (e) {}
+            }
+        }
+
+        // Run all tests
+        function runTests() {
+            checkServiceWorker();
+            checkCache();
+            checkFonts();
+            checkLightbox();
+            getMetrics();
+        }
+
+        // Initialize on load
+        window.addEventListener('load', runTests);
+        runTests();
+    </script>
+</body>
+</html>

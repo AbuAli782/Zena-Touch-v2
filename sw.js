@@ -82,11 +82,15 @@ function cacheFirst(request) {
             return response;
         }
         return fetch(request).then(response => {
-            // Clone the response
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME).then(cache => {
-                cache.put(request, responseToCache);
-            });
+            // Only cache successful full responses
+            if (response && response.status === 200) {
+                const responseToCache = response.clone();
+                caches.open(CACHE_NAME).then(cache => {
+                    cache.put(request, responseToCache).catch(err => {
+                        console.log('Cache put error:', err);
+                    });
+                });
+            }
             return response;
         }).catch(() => {
             return new Response('Offline - Resource not available', {
@@ -102,11 +106,15 @@ function cacheFirst(request) {
  */
 function networkFirst(request) {
     return fetch(request).then(response => {
-        // Clone the response
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then(cache => {
-            cache.put(request, responseToCache);
-        });
+        // Only cache successful full responses (not partial 206 responses)
+        if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME).then(cache => {
+                cache.put(request, responseToCache).catch(err => {
+                    console.log('Cache put error:', err);
+                });
+            });
+        }
         return response;
     }).catch(() => {
         return caches.match(request).then(response => {
@@ -130,7 +138,7 @@ function cacheImage(request) {
             return response;
         }
         return fetch(request).then(response => {
-            // Only cache successful responses
+            // Only cache successful full responses (status 200, not 206 partial)
             if (!response || response.status !== 200 || response.type === 'error') {
                 return response;
             }
@@ -138,7 +146,9 @@ function cacheImage(request) {
             // Clone the response
             const responseToCache = response.clone();
             caches.open(CACHE_NAME).then(cache => {
-                cache.put(request, responseToCache);
+                cache.put(request, responseToCache).catch(err => {
+                    console.log('Image cache error:', err);
+                });
             });
             return response;
         }).catch(() => {

@@ -143,24 +143,25 @@ function monitorPerformance() {
     }
 }
 
-// Cache API responses
+// Cache API responses - Optimized for GitHub Pages
 function setupResponseCache() {
     if ('caches' in window) {
         caches.open('zenatoch-v1').then(cache => {
-            // Cache static assets
-            const urlsToCache = [
-                '/',
-                '/index.html',
-                '/portfolio.html',
-                '/contact.html',
-                '/service-detail.html',
-                '/styles.css',
-                '/main.js'
+            // Cache only image assets to avoid 206 partial response issues
+            const imagesToCache = [
+                'images/Decoration_Photos/IMG1.jpg',
+                'images/Decoration_Photos/IMG2.jpg',
+                'images/Electricity_Photos/IMG1.jpg',
+                'images/Plumbing_Photos/IMG1.jpg'
             ];
 
-            cache.addAll(urlsToCache).catch(err => {
-                console.log('Cache error:', err);
+            imagesToCache.forEach(url => {
+                cache.add(url).catch(err => {
+                    console.log('Image cache error for ' + url + ':', err);
+                });
             });
+        }).catch(err => {
+            console.log('Cache storage error:', err);
         });
     }
 }
