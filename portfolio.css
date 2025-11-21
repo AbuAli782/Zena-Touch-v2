@@ -1,0 +1,265 @@
+/* ========================================
+   PORTFOLIO STYLES
+   ======================================== */
+
+.portfolio-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a6a8f 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1440" height="400" fill="url(%23grid)"/></svg>');
+    opacity: 0.5;
+}
+
+.portfolio-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.portfolio-hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* ========================================
+   FILTER BUTTONS
+   ======================================== */
+
+.portfolio-filters {
+    background-color: var(--bg);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--primary);
+    background-color: var(--surface);
+    color: var(--primary);
+    border-radius: 25px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   PORTFOLIO GRID
+   ======================================== */
+
+.portfolio-section {
+    padding: 80px 0;
+    background-color: var(--surface);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    height: 320px;
+    cursor: pointer;
+    border: 1px solid rgba(94, 129, 172, 0.1);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.15);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(94, 129, 172, 0.95) 0%, rgba(74, 106, 143, 0.85) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    backdrop-filter: blur(2px);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay-content {
+    text-align: center;
+    color: white;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-overlay-content {
+    transform: translateY(0);
+}
+
+.portfolio-overlay-icon {
+    font-size: 52px;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
+    color: white;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.portfolio-overlay-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   VIDEO CONTAINER STYLES
+   ======================================== */
+
+.portfolio-video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #000;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .portfolio-hero h1 {
+        font-size: 36px;
+    }
+
+    .portfolio-hero p {
+        font-size: 18px;
+    }
+
+    .filter-buttons {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .portfolio-item {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-hero {
+        padding: 40px 15px;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 28px;
+    }
+
+    .portfolio-hero p {
+        font-size: 16px;
+    }
+
+    .portfolio-filters {
+        padding: 20px 0;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .portfolio-item {
+        height: 250px;
+    }
+
+    .portfolio-overlay-title {
+        font-size: 16px;
+    }
+}
