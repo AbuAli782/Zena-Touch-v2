@@ -244,16 +244,16 @@
 }
 
 .feature-item {
-    background: linear-gradient(135deg, var(--surface) 0%, #fafbfc 100%);
-    padding: 35px;
-    border-radius: 18px;
-    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(94, 129, 172, 0.15);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid rgba(94, 129, 172, 0.08);
+    border: 2px solid rgba(94, 129, 172, 0.12);
     position: relative;
     overflow: hidden;
     animation: slideInUp 0.6s ease-out backwards;
@@ -272,10 +272,10 @@
 }
 
 .feature-item:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(94, 129, 172, 0.25);
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(94, 129, 172, 0.3);
     border-color: var(--primary);
-    background: linear-gradient(135deg, #ffffff 0%, #f0f5ff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
 }
 
 .feature-item:hover::before {
@@ -283,19 +283,21 @@
 }
 
 .feature-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--primary) 0%, #4a6a8f 100%);
-    border-radius: 16px;
+    perspective: 1200px;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(94, 129, 172, 0.3);
-    font-size: 32px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.5), 0 10px 25px rgba(102, 126, 234, 0.3);
+    font-size: 60px;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
+    overflow: hidden;
 }
 
 .feature-icon::before {
@@ -319,16 +321,20 @@
 }
 
 .feature-item h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    color: var(--text-dark);
-    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
 }
 
 .feature-item p {
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.6;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 500;
+    letter-spacing: 0.2px;
 }
 
 /* ========================================
@@ -760,3 +766,567 @@
 .gallery-item:nth-child(4) { animation-delay: 0.2s; }
 .gallery-item:nth-child(5) { animation-delay: 0.25s; }
 .gallery-item:nth-child(6) { animation-delay: 0.3s; }
+
+/* ========================================
+   3D ROTATING ICONS ANIMATION
+   ======================================== */
+
+.feature-icon {
+    perspective: 1200px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+    animation: spinIcon 6s linear infinite, float-icon 3s ease-in-out infinite;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25)) brightness(1.1);
+    backface-visibility: visible;
+    opacity: 1;
+}
+
+/* حركة دورانية سلسة حول المحاور الثلاثة - مثل عقارب الساعة */
+@keyframes spinIcon {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    12.5% {
+        transform: rotateX(-15deg) rotateY(45deg) rotateZ(-10deg);
+    }
+    25% {
+        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+    }
+    37.5% {
+        transform: rotateX(15deg) rotateY(135deg) rotateZ(10deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    }
+    62.5% {
+        transform: rotateX(-15deg) rotateY(225deg) rotateZ(-10deg);
+    }
+    75% {
+        transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+    }
+    87.5% {
+        transform: rotateX(15deg) rotateY(315deg) rotateZ(10deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+}
+
+/* حركة دورانية أسرع عند التمرير */
+.feature-item:hover .feature-icon svg {
+    animation: spinIconFast 3s linear infinite;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.35)) brightness(1.2);
+    opacity: 1;
+}
+
+@keyframes spinIconFast {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    12.5% {
+        transform: rotateX(-20deg) rotateY(45deg) rotateZ(-15deg);
+    }
+    25% {
+        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+    }
+    37.5% {
+        transform: rotateX(20deg) rotateY(135deg) rotateZ(15deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    }
+    62.5% {
+        transform: rotateX(-20deg) rotateY(225deg) rotateZ(-15deg);
+    }
+    75% {
+        transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+    }
+    87.5% {
+        transform: rotateX(20deg) rotateY(315deg) rotateZ(15deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+}
+
+/* إزالة الخلفية والظل الأصلي من feature-icon */
+.feature-icon {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 10px;
+}
+
+/* تأثير إضاءة على الأيقونات */
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.4), transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.feature-item:hover .feature-icon::before {
+    opacity: 1;
+}
+
+/* تأثير إضاءة إضافي عند التمرير */
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.5), transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.feature-item:hover .feature-icon::after {
+    opacity: 1;
+}
+
+/* حركة دورانية بسيطة حول محور Z مثل عقارب الساعة (بديل) */
+@keyframes simpleRotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* يمكن تفعيل هذه الحركة البسيطة بدلاً من الحركة المعقدة */
+.feature-icon svg.simple-rotate {
+    animation: simpleRotate 6s linear infinite !important;
+}
+
+/* ========================================
+   SOCIAL BUTTONS - PROFESSIONAL DESIGN
+   ======================================== */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.social-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    animation: float-icon 3s ease-in-out infinite;
+    border: none;
+    cursor: pointer;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.social-btn.github {
+    background: linear-gradient(135deg, #333, #555);
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(51, 51, 51, 0.4), 0 0 30px rgba(51, 51, 51, 0.3);
+}
+
+.social-btn.linkedin {
+    background: linear-gradient(135deg, #0077b5, #00a8e8);
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(0, 119, 181, 0.4), 0 0 30px rgba(0, 168, 232, 0.3);
+}
+
+.social-btn.twitter {
+    background: linear-gradient(135deg, #1da1f2, #1a91da);
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(29, 161, 242, 0.4), 0 0 30px rgba(26, 145, 218, 0.3);
+}
+
+.social-btn.email {
+    background: linear-gradient(135deg, #00d4ff, #ff006e);
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4), 0 0 30px rgba(255, 0, 110, 0.3);
+}
+
+.social-btn.whatsapp {
+    background: linear-gradient(135deg, #25d366, #20ba58);
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4), 0 0 30px rgba(32, 186, 88, 0.3);
+}
+
+.social-btn:hover {
+    transform: scale(1.15) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.5);
+}
+
+.social-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.social-btn i {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SERVICE DETAIL
+   ======================================== */
+
+/* Tablets (768px and up) */
+@media (max-width: 1024px) {
+    .service-hero h1 {
+        font-size: 36px;
+    }
+
+    .service-hero p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .features-grid {
+        gap: 25px;
+    }
+
+    .feature-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .feature-item h3 {
+        font-size: 20px;
+    }
+
+    .feature-item p {
+        font-size: 15px;
+    }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+    .service-hero {
+        padding: 50px 20px;
+    }
+
+    .service-hero h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .service-hero p {
+        font-size: 16px;
+    }
+
+    .service-hero-image {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .service-description {
+        padding: 40px 25px;
+        margin-bottom: 50px;
+    }
+
+    .service-description h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .service-description .intro-text {
+        font-size: 16px;
+    }
+
+    .service-description .long-text {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-item {
+        padding: 30px 25px;
+        border-radius: 16px;
+    }
+
+    .feature-icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .feature-item h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .feature-item p {
+        font-size: 14px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 220px;
+    }
+
+    .service-form-section {
+        padding: 50px 25px;
+    }
+
+    .service-form-section h2 {
+        font-size: 28px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .social-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .service-hero {
+        padding: 40px 15px;
+    }
+
+    .service-hero h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .service-hero p {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .service-description {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+
+    .service-description h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .service-description .intro-text {
+        font-size: 15px;
+    }
+
+    .service-description .long-text {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .features-grid {
+        gap: 15px;
+    }
+
+    .feature-item {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    .feature-icon {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 15px;
+    }
+
+    .feature-item h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .feature-item p {
+        font-size: 13px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .gallery-item {
+        height: 180px;
+    }
+
+    .service-form-section {
+        padding: 40px 20px;
+    }
+
+    .service-form-section h2 {
+        font-size: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .social-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Extra Small Devices (360px and below) */
+@media (max-width: 360px) {
+    .service-hero {
+        padding: 30px 10px;
+    }
+
+    .service-hero h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .service-hero p {
+        font-size: 13px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .service-description {
+        padding: 25px 15px;
+        margin-bottom: 30px;
+    }
+
+    .service-description h2 {
+        font-size: 22px;
+    }
+
+    .service-description .intro-text {
+        font-size: 14px;
+    }
+
+    .service-description .long-text {
+        font-size: 13px;
+    }
+
+    .feature-item {
+        padding: 20px 15px;
+    }
+
+    .feature-icon {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 12px;
+    }
+
+    .feature-item h3 {
+        font-size: 15px;
+    }
+
+    .feature-item p {
+        font-size: 12px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-item {
+        height: 150px;
+    }
+
+    .service-form-section {
+        padding: 30px 15px;
+    }
+
+    .service-form-section h2 {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .social-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}

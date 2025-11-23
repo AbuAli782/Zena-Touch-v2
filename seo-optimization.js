@@ -11,25 +11,78 @@ class SEOOptimizer {
         this.pageMetadata = {
             'index.html': {
                 title: 'زينة تاتش - خدمات زينة وديكور احترافية | Zeina Touch',
-                description: 'زينة تاتش - خدمات زينة وديكور احترافية، كهرباء، وسباكة في الخبر والمملكة العربية السعودية. جودة عالية وأسعار منافسة. اطلب خدماتنا الآن!',
-                keywords: 'زينة منازل، ديكور احترافي، خدمات كهرباء، سباكة، تصميم داخلي، الخبر، السعودية'
+                description: 'زينة تاتش - خدمات زينة وديكور احترافية، كهرباء، وسباكة في الدمام والخبر والعزيزية والقطيف وسيهات والجبيل. جودة عالية وأسعار منافسة.',
+                keywords: 'إضاءة خارجية الدمام، تركيب إضاءة حدائق، محلات زينة في الدمام، إضاءة واجهات منازل، إنارة حدائق بالطاقة الشمسية، تزيين إضاءة مناسبات، زينة منازل خارجية، إضاءة أعراس بالدمام، عقود إضاءة خارجية، أسعار إضاءة الحدائق، كهربائي منازل بالدمام، فني كهربائي في الدمام، كهربائي طوارئ الدمام، أفضل كهربائي في الدمام، صيانة كهرباء المنازل، تأسيس كهرباء منازل، شركة صيانة كهرباء بالدمام، تمديد كهرباء بالدمام، إصلاح أعطال الكهرباء، رقم كهربائي بالدمام، سباك في الدمام، أفضل سباك بالدمام، كشف تسربات المياه بالدمام، سباك ٢٤ ساعة الدمام، رقم سباك في الدمام، تسليك مجاري بالدمام، شركة سباكة بالدمام، تركيب أدوات صحية، إصلاح تسربات المياه، سباك ممتاز بالدمام'
             },
             'portfolio.html': {
                 title: 'معرض الأعمال - زينة تاتش | Zeina Touch Portfolio',
-                description: 'معرض أعمال زينة تاتش - اكتشف مشاريعنا الاحترافية في الزينة والديكور والكهرباء والسباكة. صور وفيديوهات عالية الجودة لأعمالنا.',
-                keywords: 'معرض أعمال، ديكور، زينة، كهرباء، سباكة، مشاريع، أعمال احترافية'
+                description: 'معرض أعمال زينة تاتش - اكتشف مشاريعنا الاحترافية في الزينة والديكور والكهرباء والسباكة بالدمام والخبر. صور وفيديوهات عالية الجودة.',
+                keywords: 'معرض أعمال، ديكور، زينة، كهرباء، سباكة، مشاريع، أعمال احترافية، تركيب إضاءة سور المنزل، أفكار إضاءة حدائق، شركات تزيين المنازل، تأجير إضاءة حفلات، إضاءة مخفية لواجهات الفلل، كشافات الحدائق، تصميم إضاءة خارجية، إنارة مسابح، إضاءة أشجار خارجية، زينة رمضان'
             },
             'contact.html': {
                 title: 'اتصل بنا - زينة تاتش | Zeina Touch Contact',
-                description: 'اتصل بنا - زينة تاتش. تواصل معنا عبر الهاتف أو البريد الإلكتروني أو WhatsApp. نحن هنا للإجابة على جميع استفساراتك.',
-                keywords: 'اتصل بنا، تواصل، معلومات التواصل، WhatsApp، هاتف، بريد إلكتروني'
+                description: 'اتصل بنا - زينة تاتش. تواصل معنا عبر الهاتف أو البريد الإلكتروني أو WhatsApp. نحن متاحون ٢٤/٧ لخدمتك في الدمام والخبر.',
+                keywords: 'اتصل بنا، تواصل، معلومات التواصل، WhatsApp، هاتف، بريد إلكتروني، رقم كهربائي، رقم سباك، تواصل معنا، خدمة العملاء، الدمام، الخبر'
             },
             'service-detail.html': {
                 title: 'تفاصيل الخدمات - زينة تاتش | Zeina Touch Services',
                 description: 'تفاصيل الخدمات - زينة تاتش. اكتشف خدماتنا الاحترافية في الزينة والديكور والكهرباء والسباكة مع صور وفيديوهات توضيحية.',
-                keywords: 'خدمات، زينة، ديكور، كهرباء، سباكة، تفاصيل الخدمة'
+                keywords: 'خدمات، زينة، ديكور، كهرباء، سباكة، تفاصيل الخدمة، كهربائي ممتاز، فني كهربائي قريب مني، إصلاح التماس كهربائي، تركيب ثريات، تغيير طبلون الكهرباء، تسليك كهرباء، مهندس كهربائي، فحص مشاكل انقطاع الكهرباء، تمديد نقاط كهرباء، تركيب أفياش ومفاتيح، صيانة لوحات التوزيع، كشف تسربات المياه بدون تكسير، إصلاح تسريب كرسي الحمام، تركيب سخانات مياه، تسليك مجاري المطبخ، معالجة رطوبة الجدران، تمديد شبكات مياه، تركيب فلاتر مياه، صيانة مضخات المياه'
             }
         };
+    }
+
+    /**
+     * Update Meta Tags Dynamically
+     */
+    updateMetaTags() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const metadata = this.pageMetadata[currentPage];
+
+        if (metadata) {
+            // Update title
+            document.title = metadata.title;
+            
+            // Update or create description meta tag
+            let descMeta = document.querySelector('meta[name="description"]');
+            if (descMeta) {
+                descMeta.setAttribute('content', metadata.description);
+            } else {
+                descMeta = document.createElement('meta');
+                descMeta.name = 'description';
+                descMeta.content = metadata.description;
+                document.head.appendChild(descMeta);
+            }
+
+            // Update or create keywords meta tag
+            let keywordsMeta = document.querySelector('meta[name="keywords"]');
+            if (keywordsMeta) {
+                keywordsMeta.setAttribute('content', metadata.keywords);
+            } else {
+                keywordsMeta = document.createElement('meta');
+                keywordsMeta.name = 'keywords';
+                keywordsMeta.content = metadata.keywords;
+                document.head.appendChild(keywordsMeta);
+            }
+
+            // Update Open Graph tags
+            this.updateOpenGraphTags(metadata);
+        }
+    }
+
+    /**
+     * Update Open Graph Tags
+     */
+    updateOpenGraphTags(metadata) {
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+            ogTitle.setAttribute('content', metadata.title);
+        }
+
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        if (ogDescription) {
+            ogDescription.setAttribute('content', metadata.description);
+        }
     }
 
     /**
@@ -226,6 +279,7 @@ class SEOOptimizer {
      * Initialize All SEO Optimizations
      */
     init() {
+        this.updateMetaTags();
         this.initLazyLoading();
         this.addBreadcrumbSchema();
         this.optimizeImages();

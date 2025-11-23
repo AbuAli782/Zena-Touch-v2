@@ -13,19 +13,29 @@ class PerformanceOptimizer {
      * Initialize performance optimizations
      */
     init() {
-        this.setupServiceWorker();
-        this.setupResourceHints();
-        this.optimizeImages();
-        this.setupCaching();
+        // Only run optimizations on HTTP/HTTPS
+        if (this.isSecureContext()) {
+            this.setupServiceWorker();
+            this.setupResourceHints();
+            this.optimizeImages();
+            this.setupCaching();
+        }
+    }
+
+    /**
+     * Check if running on secure context (HTTP/HTTPS)
+     */
+    isSecureContext() {
+        return window.location.protocol === 'http:' || window.location.protocol === 'https:';
     }
 
     /**
      * Setup Service Worker for offline support and caching
      */
     setupServiceWorker() {
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator && this.isSecureContext()) {
             navigator.serviceWorker.register('sw.js').catch(err => {
-                console.log('Service Worker registration failed:', err);
+                console.log('Service Worker registration skipped (file:// protocol)');
             });
         }
     }
@@ -95,15 +105,22 @@ class PerformanceOptimizer {
      * Setup client-side caching
      */
     setupCaching() {
-        // Cache API responses
-        this.cacheApiResponse('api/services', 3600000); // 1 hour
-        this.cacheApiResponse('api/gallery', 86400000); // 24 hours
+        // Only cache API responses on HTTP/HTTPS
+        if (this.isSecureContext()) {
+            this.cacheApiResponse('api/services', 3600000); // 1 hour
+            this.cacheApiResponse('api/gallery', 86400000); // 24 hours
+        }
     }
 
     /**
      * Cache API response with TTL
      */
     cacheApiResponse(endpoint, ttl) {
+        // Skip caching on file:// protocol
+        if (!this.isSecureContext()) {
+            return;
+        }
+
         const cacheKey = `cache_${endpoint}`;
         const timestamp = Date.now();
         
@@ -117,7 +134,7 @@ class PerformanceOptimizer {
                 };
                 localStorage.setItem(cacheKey, JSON.stringify(cacheData));
             })
-            .catch(err => console.log('Cache error:', err));
+            .catch(err => console.log('Cache error (skipped on file:// protocol):', err));
     }
 
     /**

@@ -143,9 +143,15 @@ function monitorPerformance() {
     }
 }
 
+// Check if running on secure context
+function isSecureContext() {
+    return window.location.protocol === 'http:' || window.location.protocol === 'https:';
+}
+
 // Cache API responses - Optimized for GitHub Pages
 function setupResponseCache() {
-    if ('caches' in window) {
+    // Only cache on HTTP/HTTPS, not on file:// protocol
+    if ('caches' in window && isSecureContext()) {
         caches.open('zenatoch-v1').then(cache => {
             // Cache only image assets to avoid 206 partial response issues
             const imagesToCache = [
@@ -157,11 +163,11 @@ function setupResponseCache() {
 
             imagesToCache.forEach(url => {
                 cache.add(url).catch(err => {
-                    console.log('Image cache error for ' + url + ':', err);
+                    console.log('Image cache error for ' + url + ' (skipped on file:// protocol):', err);
                 });
             });
         }).catch(err => {
-            console.log('Cache storage error:', err);
+            console.log('Cache storage error (skipped on file:// protocol):', err);
         });
     }
 }

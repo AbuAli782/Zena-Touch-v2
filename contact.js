@@ -10,22 +10,41 @@ function initializeContactForm() {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value,
-            timestamp: new Date().toISOString()
-        };
+        const name = document.getElementById('contactName')?.value || document.getElementById('name')?.value;
+        const email = document.getElementById('contactEmail')?.value || document.getElementById('email')?.value;
+        const phone = document.getElementById('contactPhone')?.value || document.getElementById('phone')?.value;
+        const message = document.getElementById('contactMessage')?.value || document.getElementById('message')?.value;
 
-        // For now, just show a success message
-        // Later this will be connected to the backend
-        alert('شكراً لك! تم استقبال رسالتك. سيتم التواصل معك قريباً.');
+        // إنشء رسالة WhatsApp
+        const whatsappMessage = `
+*رسالة جديدة من موقع زينة تاتش*
+
+👤 *الاسم:* ${name}
+📱 *الجوال:* ${phone}
+📧 *البريد الإلكتروني:* ${email}
+💬 *الرسالة:*
+${message}
+
+---
+تم الإرسال من موقع زينة تاتش
+`;
+
+        // رقم WhatsApp (رقم الشركة)
+        const whatsappNumber = '966551234567'; // استبدل برقمك
+        
+        // إنشاء رابط WhatsApp
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // فتح WhatsApp
+        window.open(whatsappUrl, '_blank');
+
+        // عرض رسالة نجاح
+        alert('شكراً لك! سيتم فتح WhatsApp لإرسال رسالتك.');
         form.reset();
 
         // Log to console (for debugging)
-        console.log('Contact Form Data:', formData);
+        console.log('WhatsApp Message:', whatsappMessage);
     });
 }
 
