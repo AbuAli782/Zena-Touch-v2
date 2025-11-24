@@ -1,7 +1,8 @@
 /* ========================================
-   LOGO STYLES
+   SHARED SERVICE DETAIL STYLES
    ======================================== */
 
+/* Logo Styles */
 .logo {
     display: flex;
     align-items: center;
@@ -52,302 +53,29 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 36px;
-    text-decoration: none;
-    box-shadow: 
-        0 12px 35px rgba(37, 211, 102, 0.4),
-        inset 1px 1px 3px rgba(255, 255, 255, 0.3),
-        inset -1px -1px 3px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 32px;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
     z-index: 999;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
+    text-decoration: none;
 }
 
 .whatsapp-floating:hover {
-    transform: scale(1.15) translateY(-15px);
-    box-shadow: 
-        0 18px 45px rgba(37, 211, 102, 0.5),
-        inset 1px 1px 3px rgba(255, 255, 255, 0.3),
-        inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
 }
 
-.whatsapp-floating::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    50% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
+.whatsapp-floating:active {
+    transform: translateY(-4px);
 }
 
 /* ========================================
-   SERVICE DETAIL STYLES
+   GALLERY STYLES
    ======================================== */
-
-.service-hero {
-    background: linear-gradient(135deg, var(--primary) 0%, #4a6a8f 100%);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.service-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1440" height="400" fill="url(%23grid)"/></svg>');
-    opacity: 0.5;
-}
-
-.service-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.service-hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: white;
-    animation: slideInDown 0.8s ease-out;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.service-hero p {
-    font-size: 20px;
-    opacity: 0.95;
-    animation: slideInUp 0.8s ease-out 0.2s backwards;
-    line-height: 1.6;
-}
-
-.service-hero-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: var(--shadow-lg);
-    margin-top: 30px;
-}
-
-/* ========================================
-   SERVICE CONTENT
-   ======================================== */
-
-.service-content {
-    padding: 80px 0;
-    background-color: var(--bg);
-}
-
-.service-description {
-    background: linear-gradient(135deg, var(--surface) 0%, #f8f9fa 100%);
-    padding: 60px;
-    border-radius: 24px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 80px;
-    border: 1px solid rgba(94, 129, 172, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-description::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(94, 129, 172, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.description-content {
-    position: relative;
-    z-index: 1;
-}
-
-.service-description h2 {
-    font-size: 42px;
-    margin-bottom: 25px;
-    color: var(--primary);
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.service-description .intro-text {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.service-description .long-text {
-    font-size: 17px;
-    line-height: 1.9;
-    color: var(--text-light);
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: rgba(94, 129, 172, 0.05);
-    border-right: 4px solid var(--primary);
-    border-radius: 8px;
-}
-
-.description-footer {
-    padding-top: 20px;
-    border-top: 2px solid var(--shadow-dark);
-}
-
-.description-footer p {
-    font-size: 16px;
-    color: var(--text-light);
-    font-style: italic;
-}
-
-/* ========================================
-   FEATURES SECTION
-   ======================================== */
-
-.features-section {
-    margin-bottom: 80px;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.feature-item {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-    padding: 40px 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(94, 129, 172, 0.15);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: 2px solid rgba(94, 129, 172, 0.12);
-    position: relative;
-    overflow: hidden;
-    animation: slideInUp 0.6s ease-out backwards;
-}
-
-.feature-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.feature-item:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 25px 50px rgba(94, 129, 172, 0.3);
-    border-color: var(--primary);
-    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-}
-
-.feature-item:hover::before {
-    opacity: 1;
-}
-
-.feature-icon {
-    perspective: 1200px;
-    width: 140px;
-    height: 140px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-bottom: 30px;
-    box-shadow: 0 0 30px rgba(102, 126, 234, 0.5), 0 10px 25px rgba(102, 126, 234, 0.3);
-    font-size: 60px;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-icon::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(135deg, var(--primary), #4a6a8f);
-    border-radius: 16px;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.4s ease;
-}
-
-.feature-item:hover .feature-icon {
-    transform: scale(1.15) rotate(8deg);
-    box-shadow: 0 15px 35px rgba(94, 129, 172, 0.4);
-}
-
-.feature-item:hover .feature-icon::before {
-    opacity: 0.5;
-}
-
-.feature-item h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    line-height: 1.4;
-}
-
-.feature-item p {
-    color: #555555;
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-}
-
-/* ========================================
-   SERVICE GALLERY
-   ======================================== */
-
-.service-gallery {
-    margin-bottom: 80px;
-}
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -355,23 +83,24 @@
     position: relative;
     overflow: hidden;
     border-radius: 18px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    height: 280px;
-    border: 1px solid rgba(94, 129, 172, 0.1);
-    animation: fadeInScale 0.6s ease-out backwards;
+    background: #f0f0f0;
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
+    transition: transform 0.3s ease;
+    display: block;
 }
 
 .gallery-item:hover img {
@@ -394,7 +123,7 @@
     bottom: 0;
     background: linear-gradient(135deg, rgba(94, 129, 172, 0.3) 0%, rgba(74, 106, 143, 0.1) 100%);
     opacity: 0;
-    transition: var(--transition);
+    transition: opacity 0.3s ease;
     z-index: 2;
     pointer-events: none;
 }
@@ -403,34 +132,104 @@
     opacity: 1;
 }
 
-/* Video Item Styles */
+/* ========================================
+   VIDEO ITEM STYLES - CRITICAL FIX
+   ======================================== */
+
 .gallery-item.video-item {
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 280px;
-    overflow: hidden;
-    border-radius: 18px;
+    background: #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    height: 280px !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+    aspect-ratio: unset !important;
 }
 
 .gallery-item.video-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-10px) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3) !important;
 }
 
+/* Portfolio Video Container */
 .portfolio-video-container {
-    width: 100%;
-    height: 100%;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
 }
 
+/* Video Element Styles */
+.portfolio-video-container video,
 .gallery-item.video-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    background: #000;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    background: #000 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+}
+
+video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    background: #000 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    pointer-events: auto !important;
+}
+
+/* Enable video controls */
+video::-webkit-media-controls {
+    display: flex !important;
+    pointer-events: auto !important;
+}
+
+video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    pointer-events: auto !important;
+}
+
+video::-webkit-media-controls-play-button {
+    pointer-events: auto !important;
+}
+
+video::-webkit-media-controls-timeline {
+    pointer-events: auto !important;
+}
+
+video::-webkit-media-controls-volume-slider {
+    pointer-events: auto !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    pointer-events: auto !important;
+}
+
+/* Firefox controls */
+video::-moz-media-controls {
+    display: flex !important;
+    pointer-events: auto !important;
+}
+
+video::-moz-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    pointer-events: auto !important;
 }
 
 /* Image Overlay with Icon */
@@ -445,7 +244,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: var(--transition);
+    transition: opacity 0.3s ease;
     z-index: 2;
 }
 
@@ -459,874 +258,55 @@
 }
 
 /* ========================================
-   SERVICE FORM
-   ======================================== */
-
-.service-form-section {
-    background: linear-gradient(135deg, var(--surface) 0%, #f8f9fa 100%);
-    padding: 70px;
-    border-radius: 24px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(94, 129, 172, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-form-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(94, 129, 172, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.service-form-section h2 {
-    position: relative;
-    z-index: 1;
-}
-
-.service-form {
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.form-group {
-    margin-bottom: 28px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: var(--text-dark);
-    font-size: 16px;
-    letter-spacing: 0.3px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid var(--shadow-dark);
-    border-radius: 14px;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 16px;
-    background-color: var(--bg);
-    color: var(--text-dark);
-    transition: var(--transition);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(78, 86, 106, 0.5);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(94, 129, 172, 0.15);
-    background-color: white;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 130px;
-    font-size: 15px;
-}
-
-.service-form button {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
 @media (max-width: 768px) {
-    .service-hero h1 {
-        font-size: 36px;
-    }
-
-    .service-hero p {
-        font-size: 18px;
-    }
-
-    .service-description {
-        padding: 25px;
-    }
-
-    .service-description h2 {
-        font-size: 28px;
-    }
-
-    .service-form-section {
-        padding: 30px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .gallery-item {
-        height: 150px;
-    }
-
-    .image-overlay i {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .service-hero {
-        padding: 40px 15px;
-    }
-
-    .service-hero h1 {
-        font-size: 28px;
-    }
-
-    .service-hero p {
-        font-size: 16px;
-    }
-
-    .service-description {
-        padding: 20px;
-        margin-bottom: 40px;
-    }
-
-    .service-description h2 {
-        font-size: 24px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .gallery-item {
-        height: 200px;
-    }
-
-    .image-overlay i {
-        font-size: 20px;
-    }
-
-    .service-form-section {
-        padding: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 16px;
-    }
-
-    .logo {
-        gap: 8px;
-    }
-
-    .logo-image {
-        width: 40px;
-        height: 40px;
-    }
-
-    .logo h1 {
-        font-size: 20px;
-    }
-
-    .whatsapp-floating {
-        width: 60px;
-        height: 60px;
-        font-size: 28px;
-        left: 15px;
-        bottom: 15px;
-    }
-}
-
-/* ========================================
-   LIGHTBOX BACK BUTTON STYLES
-   ======================================== */
-
-.lightbox-back-btn {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.95);
-    border: none;
-    border-radius: 50%;
-    color: var(--primary);
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-.lightbox-back-btn:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.lightbox-back-btn:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.lightbox-back-btn i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .lightbox-back-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-        right: 15px;
-    }
-}
-
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes glow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(94, 129, 172, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(94, 129, 172, 0.5);
-    }
-}
-
-.feature-item:nth-child(1) { animation-delay: 0.1s; }
-.feature-item:nth-child(2) { animation-delay: 0.2s; }
-.feature-item:nth-child(3) { animation-delay: 0.3s; }
-.feature-item:nth-child(4) { animation-delay: 0.4s; }
-.feature-item:nth-child(5) { animation-delay: 0.5s; }
-.feature-item:nth-child(6) { animation-delay: 0.6s; }
-
-.gallery-item:nth-child(1) { animation-delay: 0.05s; }
-.gallery-item:nth-child(2) { animation-delay: 0.1s; }
-.gallery-item:nth-child(3) { animation-delay: 0.15s; }
-.gallery-item:nth-child(4) { animation-delay: 0.2s; }
-.gallery-item:nth-child(5) { animation-delay: 0.25s; }
-.gallery-item:nth-child(6) { animation-delay: 0.3s; }
-
-/* ========================================
-   3D ROTATING ICONS ANIMATION
-   ======================================== */
-
-.feature-icon {
-    perspective: 1200px;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.feature-icon svg {
-    width: 100%;
-    height: 100%;
-    animation: spinIcon 6s linear infinite, float-icon 3s ease-in-out infinite;
-    transform-style: preserve-3d;
-    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25)) brightness(1.1);
-    backface-visibility: visible;
-    opacity: 1;
-}
-
-/* حركة دورانية سلسة حول المحاور الثلاثة - مثل عقارب الساعة */
-@keyframes spinIcon {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-    12.5% {
-        transform: rotateX(-15deg) rotateY(45deg) rotateZ(-10deg);
-    }
-    25% {
-        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
-    }
-    37.5% {
-        transform: rotateX(15deg) rotateY(135deg) rotateZ(10deg);
-    }
-    50% {
-        transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
-    }
-    62.5% {
-        transform: rotateX(-15deg) rotateY(225deg) rotateZ(-10deg);
-    }
-    75% {
-        transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
-    }
-    87.5% {
-        transform: rotateX(15deg) rotateY(315deg) rotateZ(10deg);
-    }
-    100% {
-        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
-    }
-}
-
-/* حركة دورانية أسرع عند التمرير */
-.feature-item:hover .feature-icon svg {
-    animation: spinIconFast 3s linear infinite;
-    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.35)) brightness(1.2);
-    opacity: 1;
-}
-
-@keyframes spinIconFast {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-    12.5% {
-        transform: rotateX(-20deg) rotateY(45deg) rotateZ(-15deg);
-    }
-    25% {
-        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
-    }
-    37.5% {
-        transform: rotateX(20deg) rotateY(135deg) rotateZ(15deg);
-    }
-    50% {
-        transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
-    }
-    62.5% {
-        transform: rotateX(-20deg) rotateY(225deg) rotateZ(-15deg);
-    }
-    75% {
-        transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
-    }
-    87.5% {
-        transform: rotateX(20deg) rotateY(315deg) rotateZ(15deg);
-    }
-    100% {
-        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
-    }
-}
-
-/* إزالة الخلفية والظل الأصلي من feature-icon */
-.feature-icon {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 10px;
-}
-
-/* تأثير إضاءة على الأيقونات */
-.feature-icon::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.4), transparent 65%);
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-}
-
-.feature-item:hover .feature-icon::before {
-    opacity: 1;
-}
-
-/* تأثير إضاءة إضافي عند التمرير */
-.feature-icon::after {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.5), transparent 60%);
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-.feature-item:hover .feature-icon::after {
-    opacity: 1;
-}
-
-/* حركة دورانية بسيطة حول محور Z مثل عقارب الساعة (بديل) */
-@keyframes simpleRotate {
-    0% {
-        transform: rotateZ(0deg);
-    }
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
-
-/* يمكن تفعيل هذه الحركة البسيطة بدلاً من الحركة المعقدة */
-.feature-icon svg.simple-rotate {
-    animation: simpleRotate 6s linear infinite !important;
-}
-
-/* ========================================
-   SOCIAL BUTTONS - PROFESSIONAL DESIGN
-   ======================================== */
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.social-btn {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    animation: float-icon 3s ease-in-out infinite;
-    border: none;
-    cursor: pointer;
-}
-
-.social-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.social-btn.github {
-    background: linear-gradient(135deg, #333, #555);
-    color: var(--white);
-    box-shadow: 0 15px 40px rgba(51, 51, 51, 0.4), 0 0 30px rgba(51, 51, 51, 0.3);
-}
-
-.social-btn.linkedin {
-    background: linear-gradient(135deg, #0077b5, #00a8e8);
-    color: var(--white);
-    box-shadow: 0 15px 40px rgba(0, 119, 181, 0.4), 0 0 30px rgba(0, 168, 232, 0.3);
-}
-
-.social-btn.twitter {
-    background: linear-gradient(135deg, #1da1f2, #1a91da);
-    color: var(--white);
-    box-shadow: 0 15px 40px rgba(29, 161, 242, 0.4), 0 0 30px rgba(26, 145, 218, 0.3);
-}
-
-.social-btn.email {
-    background: linear-gradient(135deg, #00d4ff, #ff006e);
-    color: var(--white);
-    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4), 0 0 30px rgba(255, 0, 110, 0.3);
-}
-
-.social-btn.whatsapp {
-    background: linear-gradient(135deg, #25d366, #20ba58);
-    color: var(--white);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4), 0 0 30px rgba(32, 186, 88, 0.3);
-}
-
-.social-btn:hover {
-    transform: scale(1.15) translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.5);
-}
-
-.social-btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.social-btn i {
-    position: relative;
-    z-index: 2;
-}
-
-/* ========================================
-   RESPONSIVE DESIGN - SERVICE DETAIL
-   ======================================== */
-
-/* Tablets (768px and up) */
-@media (max-width: 1024px) {
-    .service-hero h1 {
-        font-size: 36px;
-    }
-
-    .service-hero p {
-        font-size: 18px;
-    }
-
-    .section-title {
-        font-size: 36px;
-        margin-bottom: 40px;
-    }
-
-    .features-grid {
-        gap: 25px;
-    }
-
-    .feature-icon {
-        width: 120px;
-        height: 120px;
-    }
-
-    .feature-item h3 {
-        font-size: 20px;
-    }
-
-    .feature-item p {
-        font-size: 15px;
-    }
-}
-
-/* Mobile Devices (768px and below) */
-@media (max-width: 768px) {
-    .service-hero {
-        padding: 50px 20px;
-    }
-
-    .service-hero h1 {
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-
-    .service-hero p {
-        font-size: 16px;
-    }
-
-    .service-hero-image {
-        max-width: 100%;
-        margin-top: 20px;
-    }
-
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
-
-    .service-description {
-        padding: 40px 25px;
-        margin-bottom: 50px;
-    }
-
-    .service-description h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
-    }
-
-    .service-description .intro-text {
-        font-size: 16px;
-    }
-
-    .service-description .long-text {
-        font-size: 15px;
-        padding: 15px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .feature-item {
-        padding: 30px 25px;
-        border-radius: 16px;
-    }
-
-    .feature-icon {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 20px;
-    }
-
-    .feature-item h3 {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .feature-item p {
-        font-size: 14px;
-    }
-
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 15px;
     }
 
     .gallery-item {
-        height: 220px;
+        aspect-ratio: 1;
     }
 
-    .service-form-section {
-        padding: 50px 25px;
+    .gallery-item.video-item {
+        height: 200px !important;
     }
 
-    .service-form-section h2 {
+    .whatsapp-floating {
+        width: 60px;
+        height: 60px;
         font-size: 28px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    .social-btn {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
+        bottom: 20px;
+        left: 20px;
     }
 }
 
-/* Small Mobile Devices (480px and below) */
 @media (max-width: 480px) {
-    .service-hero {
-        padding: 40px 15px;
-    }
-
-    .service-hero h1 {
-        font-size: 24px;
-        margin-bottom: 12px;
-    }
-
-    .service-hero p {
-        font-size: 14px;
-    }
-
-    .section-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .service-description {
-        padding: 30px 20px;
-        margin-bottom: 40px;
-    }
-
-    .service-description h2 {
-        font-size: 26px;
-        margin-bottom: 15px;
-    }
-
-    .service-description .intro-text {
-        font-size: 15px;
-    }
-
-    .service-description .long-text {
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    .features-grid {
-        gap: 15px;
-    }
-
-    .feature-item {
-        padding: 25px 20px;
-        border-radius: 14px;
-    }
-
-    .feature-icon {
-        width: 85px;
-        height: 85px;
-        margin-bottom: 15px;
-    }
-
-    .feature-item h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .feature-item p {
-        font-size: 13px;
-    }
-
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
         gap: 12px;
     }
 
     .gallery-item {
-        height: 180px;
+        aspect-ratio: 1;
     }
 
-    .service-form-section {
-        padding: 40px 20px;
+    .gallery-item.video-item {
+        height: 250px !important;
     }
 
-    .service-form-section h2 {
+    .whatsapp-floating {
+        width: 55px;
+        height: 55px;
         font-size: 24px;
+        bottom: 15px;
+        left: 15px;
     }
 
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 13px;
-    }
-
-    .social-btn {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8rem;
-    }
-}
-
-/* Extra Small Devices (360px and below) */
-@media (max-width: 360px) {
-    .service-hero {
-        padding: 30px 10px;
-    }
-
-    .service-hero h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .service-hero p {
-        font-size: 13px;
-    }
-
-    .section-title {
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-
-    .service-description {
-        padding: 25px 15px;
-        margin-bottom: 30px;
-    }
-
-    .service-description h2 {
-        font-size: 22px;
-    }
-
-    .service-description .intro-text {
-        font-size: 14px;
-    }
-
-    .service-description .long-text {
-        font-size: 13px;
-    }
-
-    .feature-item {
-        padding: 20px 15px;
-    }
-
-    .feature-icon {
-        width: 75px;
-        height: 75px;
-        margin-bottom: 12px;
-    }
-
-    .feature-item h3 {
-        font-size: 15px;
-    }
-
-    .feature-item p {
-        font-size: 12px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
-    }
-
-    .gallery-item {
-        height: 150px;
-    }
-
-    .service-form-section {
-        padding: 30px 15px;
-    }
-
-    .service-form-section h2 {
-        font-size: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 8px;
-        font-size: 13px;
-    }
-
-    .social-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+    .image-overlay i {
+        font-size: 24px;
     }
 }

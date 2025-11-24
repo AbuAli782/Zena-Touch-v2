@@ -45,43 +45,79 @@ const portfolioData = [
     { id: 37, category: 'decoration', media: 'images/Decoration_Photos/VID8.mp4', type: 'video', title: 'فيديو ديكور 8' },
     { id: 38, category: 'decoration', media: 'images/Decoration_Photos/VID9.mp4', type: 'video', title: 'فيديو ديكور 9' },
     { id: 39, category: 'decoration', media: 'images/Decoration_Photos/VID10.mp4', type: 'video', title: 'فيديو ديكور 10' },
+    { id: 40, category: 'decoration', media: 'images/Decoration_Photos/VID11.mp4', type: 'video', title: 'فيديو ديكور 11' },
+    { id: 41, category: 'decoration', media: 'images/Decoration_Photos/VID12.mp4', type: 'video', title: 'فيديو ديكور 12' },
+    { id: 42, category: 'decoration', media: 'images/Decoration_Photos/VID13.mp4', type: 'video', title: 'فيديو ديكور 13' },
+    { id: 43, category: 'decoration', media: 'images/Decoration_Photos/VID14.mp4', type: 'video', title: 'فيديو ديكور 14' },
+    { id: 44, category: 'decoration', media: 'images/Decoration_Photos/VID15.mp4', type: 'video', title: 'فيديو ديكور 15' },
+    { id: 45, category: 'decoration', media: 'images/Decoration_Photos/VID16.mp4', type: 'video', title: 'فيديو ديكور 16' },
+    { id: 46, category: 'decoration', media: 'images/Decoration_Photos/VID17.mp4', type: 'video', title: 'فيديو ديكور 17' },
+    { id: 47, category: 'decoration', media: 'images/Decoration_Photos/VID18.mp4', type: 'video', title: 'فيديو ديكور 18' },
+    { id: 48, category: 'decoration', media: 'images/Decoration_Photos/VID19.mp4', type: 'video', title: 'فيديو ديكور 19' },
+    { id: 49, category: 'decoration', media: 'images/Decoration_Photos/VID20.mp4', type: 'video', title: 'فيديو ديكور 20' },
+    { id: 50, category: 'decoration', media: 'images/Decoration_Photos/VID21.mp4', type: 'video', title: 'فيديو ديكور 21' },
+    { id: 51, category: 'decoration', media: 'images/Decoration_Photos/VID22.mp4', type: 'video', title: 'فيديو ديكور 22' },
+    { id: 52, category: 'decoration', media: 'images/Decoration_Photos/VID23.mp4', type: 'video', title: 'فيديو ديكور 23' },
+    { id: 53, category: 'decoration', media: 'images/Decoration_Photos/VID24.mp4', type: 'video', title: 'فيديو ديكور 24' },
+    { id: 54, category: 'decoration', media: 'images/Decoration_Photos/VID25.mp4', type: 'video', title: 'فيديو ديكور 25' },
+    { id: 55, category: 'decoration', media: 'images/Decoration_Photos/VID26.mp4', type: 'video', title: 'فيديو ديكور 26' },
+    { id: 56, category: 'decoration', media: 'images/Decoration_Photos/VID27.mp4', type: 'video', title: 'فيديو ديكور 27' },
+    { id: 57, category: 'decoration', media: 'images/Decoration_Photos/VID28.mp4', type: 'video', title: 'فيديو ديكور 28' },
+    { id: 58, category: 'decoration', media: 'images/Decoration_Photos/VID29.mp4', type: 'video', title: 'فيديو ديكور 29' },
+    { id: 59, category: 'decoration', media: 'images/Decoration_Photos/VID30.mp4', type: 'video', title: 'فيديو ديكور 30' },
+    { id: 60, category: 'decoration', media: 'images/Decoration_Photos/VID31.mp4', type: 'video', title: 'فيديو ديكور 31' },
+    { id: 61, category: 'decoration', media: 'images/Decoration_Photos/VID32.mp4', type: 'video', title: 'فيديو ديكور 32' },
+    { id: 62, category: 'decoration', media: 'images/Decoration_Photos/VID33.mp4', type: 'video', title: 'فيديو ديكور 33' },
+    { id: 63, category: 'decoration', media: 'images/Decoration_Photos/VID34.mp4', type: 'video', title: 'فيديو ديكور 34' },
+    { id: 64, category: 'decoration', media: 'images/Decoration_Photos/VID35.mp4', type: 'video', title: 'فيديو ديكور 35' },
+    { id: 65, category: 'decoration', media: 'images/Decoration_Photos/VID36.mp4', type: 'video', title: 'فيديو ديكور 36' },
+    { id: 66, category: 'decoration', media: 'images/Decoration_Photos/VID37.mp4', type: 'video', title: 'فيديو ديكور 37' },
+    { id: 67, category: 'decoration', media: 'images/Decoration_Photos/VID38.mp4', type: 'video', title: 'فيديو ديكور 38' },
+    { id: 68, category: 'decoration', media: 'images/Decoration_Photos/VID39.mp4', type: 'video', title: 'فيديو ديكور 39' },
+    { id: 69, category: 'decoration', media: 'images/Decoration_Photos/VID40.mp4', type: 'video', title: 'فيديو ديكور 40' },
+    { id: 70, category: 'decoration', media: 'images/Decoration_Photos/VID41.mp4', type: 'video', title: 'فيديو ديكور 41' },
+    { id: 71, category: 'decoration', media: 'images/Decoration_Photos/VID42.mp4', type: 'video', title: 'فيديو ديكور 42' },
+    { id: 72, category: 'decoration', media: 'images/Decoration_Photos/VID43.mp4', type: 'video', title: 'فيديو ديكور 43' },
+    { id: 73, category: 'decoration', media: 'images/Decoration_Photos/VID44.mp4', type: 'video', title: 'فيديو ديكور 44' },
+    { id: 74, category: 'decoration', media: 'images/Decoration_Photos/VID45.mp4', type: 'video', title: 'فيديو ديكور 45' },
+    { id: 75, category: 'decoration', media: 'images/Decoration_Photos/VID46.mp4', type: 'video', title: 'فيديو ديكور 46' },
     
     // Electricity Images
-    { id: 40, category: 'electricity', media: 'images/Electricity_Photos/IMG1.jpg', type: 'image', title: 'تركيب كهربائي' },
-    { id: 41, category: 'electricity', media: 'images/Electricity_Photos/IMG2.jpg', type: 'image', title: 'صيانة كهربائية' },
-    { id: 42, category: 'electricity', media: 'images/Electricity_Photos/IMG3.jpg', type: 'image', title: 'أعمال كهرباء' },
-    { id: 43, category: 'electricity', media: 'images/Electricity_Photos/IMG4.jpg', type: 'image', title: 'تركيب إضاءة' },
-    { id: 44, category: 'electricity', media: 'images/Electricity_Photos/IMG5.jpg', type: 'image', title: 'أعمال كهربائية' },
-    { id: 45, category: 'electricity', media: 'images/Electricity_Photos/IMG6.jpg', type: 'image', title: 'تركيب كهربائي' },
-    { id: 46, category: 'electricity', media: 'images/Electricity_Photos/IMG7.jpg', type: 'image', title: 'صيانة كهرباء' },
-    { id: 47, category: 'electricity', media: 'images/Electricity_Photos/IMG8.jpg', type: 'image', title: 'أعمال كهرباء' },
-    { id: 48, category: 'electricity', media: 'images/Electricity_Photos/IMG9.jpg', type: 'image', title: 'تركيب إضاءة' },
-    { id: 49, category: 'electricity', media: 'images/Electricity_Photos/IMG10.jpg', type: 'image', title: 'أعمال كهربائية' },
-    { id: 50, category: 'electricity', media: 'images/Electricity_Photos/IMG11.jpg', type: 'image', title: 'تركيب كهربائي' },
-    { id: 51, category: 'electricity', media: 'images/Electricity_Photos/IMG12.jpg', type: 'image', title: 'صيانة كهرباء' },
-    { id: 52, category: 'electricity', media: 'images/Electricity_Photos/IMG13.jpg', type: 'image', title: 'أعمال كهرباء' },
-    { id: 53, category: 'electricity', media: 'images/Electricity_Photos/IMG14.jpg', type: 'image', title: 'تركيب إضاءة' },
-    { id: 54, category: 'electricity', media: 'images/Electricity_Photos/IMG15.jpg', type: 'image', title: 'أعمال كهربائية' },
-    { id: 55, category: 'electricity', media: 'images/Electricity_Photos/IMG16.jpg', type: 'image', title: 'تركيب كهربائي' },
-    { id: 56, category: 'electricity', media: 'images/Electricity_Photos/IMG17.jpg', type: 'image', title: 'صيانة كهرباء' },
-    { id: 57, category: 'electricity', media: 'images/Electricity_Photos/IMG18.jpg', type: 'image', title: 'أعمال كهرباء' },
-    { id: 58, category: 'electricity', media: 'images/Electricity_Photos/IMG19.jpg', type: 'image', title: 'تركيب إضاءة' },
-    { id: 59, category: 'electricity', media: 'images/Electricity_Photos/IMG20.jpg', type: 'image', title: 'أعمال كهربائية' },
-    { id: 60, category: 'electricity', media: 'images/Electricity_Photos/IMG21.jpg', type: 'image', title: 'تركيب كهربائي' },
-    { id: 61, category: 'electricity', media: 'images/Electricity_Photos/IMG22.jpg', type: 'image', title: 'صيانة كهرباء' },
-    { id: 62, category: 'electricity', media: 'images/Electricity_Photos/IMG23.jpg', type: 'image', title: 'أعمال كهرباء' },
-    { id: 63, category: 'electricity', media: 'images/Electricity_Photos/IMG24.jpg', type: 'image', title: 'تركيب إضاءة' },
-    { id: 64, category: 'electricity', media: 'images/Electricity_Photos/IMG25.mp4', type: 'video', title: 'فيديو كهرباء' },
-    { id: 65, category: 'electricity', media: 'images/Electricity_Photos/IMG26.jpg', type: 'image', title: 'أعمال كهربائية' },
+    { id: 76, category: 'electricity', media: 'images/Electricity_Photos/IMG1.jpg', type: 'image', title: 'تركيب كهربائي' },
+    { id: 77, category: 'electricity', media: 'images/Electricity_Photos/IMG2.jpg', type: 'image', title: 'صيانة كهربائية' },
+    { id: 78, category: 'electricity', media: 'images/Electricity_Photos/IMG3.jpg', type: 'image', title: 'أعمال كهرباء' },
+    { id: 79, category: 'electricity', media: 'images/Electricity_Photos/IMG4.jpg', type: 'image', title: 'تركيب إضاءة' },
+    { id: 80, category: 'electricity', media: 'images/Electricity_Photos/IMG5.jpg', type: 'image', title: 'أعمال كهربائية' },
+    { id: 81, category: 'electricity', media: 'images/Electricity_Photos/IMG6.jpg', type: 'image', title: 'تركيب كهربائي' },
+    { id: 82, category: 'electricity', media: 'images/Electricity_Photos/IMG7.jpg', type: 'image', title: 'صيانة كهرباء' },
+    { id: 83, category: 'electricity', media: 'images/Electricity_Photos/IMG8.jpg', type: 'image', title: 'أعمال كهرباء' },
+    { id: 84, category: 'electricity', media: 'images/Electricity_Photos/IMG9.jpg', type: 'image', title: 'تركيب إضاءة' },
+    { id: 85, category: 'electricity', media: 'images/Electricity_Photos/IMG10.jpg', type: 'image', title: 'أعمال كهربائية' },
+    { id: 86, category: 'electricity', media: 'images/Electricity_Photos/IMG11.jpg', type: 'image', title: 'تركيب كهربائي' },
+    { id: 87, category: 'electricity', media: 'images/Electricity_Photos/IMG12.jpg', type: 'image', title: 'صيانة كهرباء' },
+    { id: 88, category: 'electricity', media: 'images/Electricity_Photos/IMG13.jpg', type: 'image', title: 'أعمال كهرباء' },
+    { id: 89, category: 'electricity', media: 'images/Electricity_Photos/IMG14.jpg', type: 'image', title: 'تركيب إضاءة' },
+    { id: 90, category: 'electricity', media: 'images/Electricity_Photos/IMG15.jpg', type: 'image', title: 'أعمال كهربائية' },
+    { id: 91, category: 'electricity', media: 'images/Electricity_Photos/IMG16.jpg', type: 'image', title: 'تركيب كهربائي' },
+    { id: 92, category: 'electricity', media: 'images/Electricity_Photos/IMG17.jpg', type: 'image', title: 'صيانة كهرباء' },
+    { id: 93, category: 'electricity', media: 'images/Electricity_Photos/IMG18.jpg', type: 'image', title: 'أعمال كهرباء' },
+    { id: 94, category: 'electricity', media: 'images/Electricity_Photos/IMG19.jpg', type: 'image', title: 'تركيب إضاءة' },
+    { id: 95, category: 'electricity', media: 'images/Electricity_Photos/IMG20.jpg', type: 'image', title: 'أعمال كهربائية' },
+    { id: 96, category: 'electricity', media: 'images/Electricity_Photos/IMG21.jpg', type: 'image', title: 'تركيب كهربائي' },
+    { id: 97, category: 'electricity', media: 'images/Electricity_Photos/IMG22.jpg', type: 'image', title: 'صيانة كهرباء' },
+    { id: 98, category: 'electricity', media: 'images/Electricity_Photos/IMG23.jpg', type: 'image', title: 'أعمال كهرباء' },
+    { id: 99, category: 'electricity', media: 'images/Electricity_Photos/IMG24.jpg', type: 'image', title: 'تركيب إضاءة' },
+    { id: 100, category: 'electricity', media: 'images/Electricity_Photos/IMG25.mp4', type: 'video', title: 'فيديو كهرباء' },
+    { id: 101, category: 'electricity', media: 'images/Electricity_Photos/IMG26.jpg', type: 'image', title: 'أعمال كهربائية' },
     
     // Plumbing Images
-    { id: 66, category: 'plumbing', media: 'images/Plumbing_Photos/IMG1.jpg', type: 'image', title: 'أعمال سباكة' },
-    { id: 67, category: 'plumbing', media: 'images/Plumbing_Photos/IMG2.jpg', type: 'image', title: 'تركيب أنابيب' },
-    { id: 68, category: 'plumbing', media: 'images/Plumbing_Photos/IMG3.jpg', type: 'image', title: 'إصلاح سباكة' },
+    { id: 102, category: 'plumbing', media: 'images/Plumbing_Photos/IMG1.jpg', type: 'image', title: 'أعمال سباكة' },
+    { id: 103, category: 'plumbing', media: 'images/Plumbing_Photos/IMG2.jpg', type: 'image', title: 'تركيب أنابيب' },
+    { id: 104, category: 'plumbing', media: 'images/Plumbing_Photos/IMG3.jpg', type: 'image', title: 'إصلاح سباكة' },
     
     // Plumbing Videos
-    { id: 69, category: 'plumbing', media: 'images/Plumbing_Photos/VID1.mp4', type: 'video', title: 'فيديو سباكة 1' },
-    { id: 70, category: 'plumbing', media: 'images/Plumbing_Photos/VID2.mp4', type: 'video', title: 'فيديو سباكة 2' },
+    { id: 105, category: 'plumbing', media: 'images/Plumbing_Photos/VID1.mp4', type: 'video', title: 'فيديو سباكة 1' },
+    { id: 106, category: 'plumbing', media: 'images/Plumbing_Photos/VID2.mp4', type: 'video', title: 'فيديو سباكة 2' },
 ];
 
 // ========================================
@@ -103,7 +139,11 @@ function renderPortfolioItems(filter = 'all') {
         if (item.type === 'video') {
             portfolioItem.innerHTML = `
                 <div class="portfolio-video-container">
-                    <video controls preload="metadata" style="width: 100%; height: 100%;" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23000' width='400' height='300'/%3E%3C/svg%3E">
+                    <video 
+                        controls 
+                        preload="auto" 
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23000' width='400' height='300'/%3E%3C/svg%3E" 
+                        crossorigin="anonymous">
                         <source src="${item.media}" type="video/mp4">
                         متصفحك لا يدعم تشغيل الفيديو
                     </video>
@@ -133,6 +173,13 @@ function renderPortfolioItems(filter = 'all') {
             'wrapAround': true,
             'albumLabel': 'صورة %1 من %2'
         });
+    }
+
+    // Trigger video handler to configure new videos
+    if (typeof videoHandler !== 'undefined') {
+        setTimeout(() => {
+            videoHandler.setupVideos();
+        }, 100);
     }
 }
 
