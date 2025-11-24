@@ -6,7 +6,10 @@ function initializeHeroVideo() {
     const heroTitle = document.getElementById('heroTitle');
     const heroSubtitle = document.getElementById('heroSubtitle');
     
-    if (!heroVideo || !heroTitle || !heroSubtitle) return;
+    if (!heroVideo || !heroTitle || !heroSubtitle) {
+        console.log('Hero video elements not found on this page');
+        return;
+    }
 
     const heroVideos = [
         {
@@ -188,6 +191,8 @@ function initializeServiceVideos() {
 // ========================================
 function initializeGallery() {
     const galleryWrapper = document.getElementById('galleryWrapper');
+    if (!galleryWrapper) return; // Exit if element doesn't exist
+    
     const images = [
         { src: 'images/Decoration_Photos/IMG1.jpg', alt: 'ديكور 1' },
         { src: 'images/Decoration_Photos/IMG2.jpg', alt: 'ديكور 2' },
@@ -243,6 +248,8 @@ function initializeMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
+    if (!menuToggle || !navLinks) return; // Exit if elements don't exist
+
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
@@ -279,6 +286,8 @@ function initializeSmoothScroll() {
 // ========================================
 function initializeNavbarScroll() {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return; // Exit if navbar doesn't exist
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.boxShadow = 'var(--shadow-lg)';

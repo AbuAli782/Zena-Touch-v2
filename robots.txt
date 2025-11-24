@@ -1,41 +1,38 @@
 # robots.txt - Zeina Touch Website
-# Optimized for SEO - Allow all search engines to crawl the site
+# Allow all search engines to crawl the site
 
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /portfolio.html
+Allow: /contact.html
+Allow: /service-detail.html
 Allow: /images/
 Allow: /styles.css
 Allow: /main.js
 Allow: /portfolio.js
 Allow: /service-detail.js
-Allow: /seo-optimization.js
-Allow: /structured-data.js
-Allow: /performance-optimization.js
-Allow: /meta-tags-optimizer.js
-Allow: /google-analytics.js
-Allow: /*.html$
 
-# Disallow admin and private areas only
+# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /backup/
+Disallow: /*.json$
+Disallow: /*.xml$
 Disallow: /node_modules/
-Disallow: /.git/
 
-# Specific rules for Googlebot - Optimized for fast crawling
+# Specific rules for Googlebot
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
-Request-rate: 100/1h
 
 # Specific rules for Bingbot
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 0
-Request-rate: 100/1h
+Crawl-delay: 1
 
-# Block aggressive bots
+# Block bad bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -45,14 +42,5 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: YandexBot
-Disallow: /
-
 # Sitemap location
 Sitemap: https://abuali782.github.io/Zena-Touch-v2/sitemap.xml
-
-# Crawl-delay for all other bots
-Crawl-delay: 1

@@ -90,6 +90,7 @@ const portfolioData = [
 
 function renderPortfolioItems(filter = 'all') {
     const portfolioGrid = document.getElementById('portfolioGrid');
+    if (!portfolioGrid) return; // Exit if portfolioGrid doesn't exist on this page
     portfolioGrid.innerHTML = '';
 
     const filteredItems = filter === 'all' 

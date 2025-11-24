@@ -405,6 +405,7 @@ function loadServiceContent() {
 
     // Load Hero Section
     const heroSection = document.getElementById('serviceHero');
+    if (!heroSection) return; // Exit if element doesn't exist
     heroSection.innerHTML = '';
     const heroContent = document.createElement('div');
     heroContent.className = 'service-hero-content';
@@ -421,6 +422,7 @@ function loadServiceContent() {
 
     // Load Description
     const descriptionSection = document.getElementById('serviceDescription');
+    if (!descriptionSection) return; // Exit if element doesn't exist
     descriptionSection.innerHTML = '';
     const descContent = document.createElement('div');
     descContent.className = 'description-content';
@@ -450,6 +452,7 @@ function loadServiceContent() {
 
     // Load Features
     const featuresGrid = document.getElementById('featuresGrid');
+    if (!featuresGrid) return; // Exit if element doesn't exist
     featuresGrid.innerHTML = '';
     
     serviceData.features.forEach(feature => {
@@ -482,6 +485,7 @@ function loadServiceContent() {
 
     // Load Gallery with proper video and image handling
     const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) return; // Exit if element doesn't exist
     galleryGrid.innerHTML = '';
 
     serviceData.media.forEach((item, index) => {
@@ -577,6 +581,7 @@ function addLightboxBackButton() {
 
 function initializeForm() {
     const form = document.getElementById('serviceForm');
+    if (!form) return; // Exit if form doesn't exist
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -639,7 +644,7 @@ function initializeMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
-    if (menuToggle) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
