@@ -42,15 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Reinitialize Lightbox after dynamic content loading
 function reinitializeLightbox() {
-    if (typeof lightbox !== 'undefined') {
+    if (typeof lightbox !== 'undefined' && typeof lightbox.init === 'function') {
         try {
-            // Lightbox 2 doesn't have an init() method
-            // Instead, we refresh by setting options which re-binds to elements
-            lightbox.option({
-                'resizeDuration': 200,
-                'wrapAround': true,
-                'albumLabel': 'صورة %1 من %2'
-            });
+            lightbox.init();
         } catch (e) {
             console.log('Lightbox reinitialization error:', e);
         }
